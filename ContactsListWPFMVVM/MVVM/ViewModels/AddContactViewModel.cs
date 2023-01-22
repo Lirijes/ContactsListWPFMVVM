@@ -23,13 +23,29 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
         private string pageTitle = "Add Contact";
 
         [ObservableProperty]
-        private string contact = string.Empty;
+        private string firstname = string.Empty;
+
+        [ObservableProperty]
+        private string lastname = string.Empty;
+
+        [ObservableProperty]
+        private int phonenumber = 0;
+
+        [ObservableProperty]
+        private string address = string.Empty;
+
+        [ObservableProperty]
+        private string email = string.Empty;
 
         [RelayCommand]
         private void AddContact()
         {
-            fileservice.AddContact(new ContactsModel { FirstName = Contact, LastName = Contact, Address = Contact, Email = Contact });
-            Contact = string.Empty;
+            fileservice.AddContact(new ContactsModel { FirstName = Firstname, LastName = Lastname, Phonenumber = Phonenumber, Address = Address, Email = Email});
+            Firstname = string.Empty;
+            Lastname = string.Empty;
+            Phonenumber = 0;
+            Address = string.Empty;
+            Email = string.Empty;
         }
 
         [RelayCommand]

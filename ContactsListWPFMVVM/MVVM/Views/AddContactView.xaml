@@ -19,19 +19,19 @@
 
         <StackPanel Grid.Row="2">
             <TextBlock Text="Enter firstname" />
-            <TextBox Text="{Binding Contact}" Padding="5" Margin="0 2 0 5" />
+            <TextBox Text="{Binding Firstname}" Padding="5" Margin="0 2 0 5" />
 
             <TextBlock Text="Enter lastname:" />
-            <TextBox Text="{Binding Contact}" Padding="5" Margin="0 2 0 5" />
+            <TextBox Text="{Binding Lastname}" Padding="5" Margin="0 2 0 5" />
 
             <TextBlock Text="Enter phonenumber:" />
-            <TextBox Text="{Binding Contact}" Padding="5" Margin="0 2 0 5" />
+            <TextBox Text="{Binding Phonenumber}" Padding="5" Margin="0 2 0 5" />
 
             <TextBlock Text="Enter address:" />
-            <TextBox Text="{Binding Contact}" Padding="5" Margin="0 2 0 5" />
+            <TextBox Text="{Binding Address}" Padding="5" Margin="0 2 0 5" />
 
             <TextBlock Text="Enter email:" />
-            <TextBox Text="{Binding Contact}" Padding="5" Margin="0 2 0 10" />
+            <TextBox Text="{Binding Email}" Padding="5" Margin="0 2 0 10" />
 
             <Button Command="{Binding AddContactCommand}" Content="ADD CONTACT" Padding="10" />
 
