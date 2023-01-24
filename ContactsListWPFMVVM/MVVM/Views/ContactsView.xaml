@@ -37,9 +37,9 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Command="{Binding GoToStartup}" Margin="20 0 20 0" Content="GO BACK" Click="Button_Click" />
-            <Button Grid.Column="1" Command="" Content="EDIT CONTACT" Margin="20 0 20 0" />
-            <Button Grid.Column="2" Command="{Binding}" Content="DELETE CONTACT" Margin="20 0 20 0" />
+            <Button Grid.Column="0" Command="{Binding}" Margin="10 0 10 0" Content="GO BACK" Click="Button_Click" />
+            <Button Grid.Column="1" Command="" Content="EDIT CONTACT" Margin="10 0 10 0" />
+            <Button Grid.Column="2" Command="{Binding}" Content="DELETE CONTACT" Margin="10 0 10 0" />
         </Grid>
     </Grid>
 </UserControl>

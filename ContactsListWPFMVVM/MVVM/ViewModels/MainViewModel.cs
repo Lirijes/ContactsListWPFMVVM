@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ContactsListWPFMVVM.MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,13 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
         [ObservableProperty]
         private ObservableObject currentViewModel;
 
+        [ObservableProperty]
+        private ObservableObject contactListViewModel;
+
         public MainViewModel()
         {
             CurrentViewModel = new StartupViewModel();
+            contactListViewModel = new ContactsListViewModel();
         }
 
         [RelayCommand]
@@ -34,6 +39,12 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
         public void GoToStartup()
         {
             CurrentViewModel = new StartupViewModel();
+        }
+
+        [RelayCommand]
+        public void GoToSpecContact()
+        {
+            CurrentViewModel = new SpecContactViewModel();
         }
     }
 }

@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace ContactsListWPFMVVM.MVVM.Views
 {
     /// <summary>
-    /// Interaction logic for AddContactView.xaml
+    /// Interaction logic for SpecContactView.xaml
     /// </summary>
-    public partial class AddContactView : UserControl
+    public partial class SpecContactView : UserControl
     {
-        public AddContactView()
+        public SpecContactView()
         {
             InitializeComponent();
-            
         }
     }
 }
