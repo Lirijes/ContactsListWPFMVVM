@@ -31,7 +31,7 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
         }
 
         [RelayCommand]
-        private void GoToStartup()
+        public void GoToStartup()
         {
             CurrentViewModel = new StartupViewModel();
         }

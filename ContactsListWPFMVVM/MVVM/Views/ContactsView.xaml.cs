@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContactsListWPFMVVM.MVVM.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace ContactsListWPFMVVM.MVVM.Views
         public ContactsView()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var mainwindow = (MainWindow)Application.Current.MainWindow;
+            //mainwindow.GoToStartup(new StartupViewModel());
         }
     }
 }

@@ -38,9 +38,9 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
         private string email = string.Empty;
 
         [RelayCommand]
-        private void AddContact()
+        public void AddContact()
         {
-            fileservice.AddContact(new ContactsModel { FirstName = Firstname, LastName = Lastname, Phonenumber = Phonenumber, Address = Address, Email = Email});
+            fileservice.AddContact(new ContactsModel { FirstName = Firstname, LastName = Lastname, Phonenumber = Phonenumber, Address = Address, Email = Email });
             Firstname = string.Empty;
             Lastname = string.Empty;
             Phonenumber = 0;
@@ -49,7 +49,7 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
         }
 
         [RelayCommand]
-        private void RemoveContact(ContactsModel contact)
+        public void RemoveContact(ContactsModel contact)
         {
             fileservice.RemoveContact(contact);
         }
