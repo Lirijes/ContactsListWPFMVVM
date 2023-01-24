@@ -47,11 +47,5 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
             Address = string.Empty;
             Email = string.Empty;
         }
-
-        [RelayCommand]
-        public void RemoveContact(ContactsModel contact)
-        {
-            fileservice.RemoveContact(contact);
-        }
     }
 }

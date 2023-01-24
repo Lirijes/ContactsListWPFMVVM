@@ -4,9 +4,42 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ContactsListWPFMVVM.MVVM.Views"
+             xmlns:viewmodels="clr-namespace:ContactsListWPFMVVM.MVVM.ViewModels"
+             xmlns:models="clr-namespace:ContactsListWPFMVVM.MVVM.Models"
              mc:Ignorable="d" 
+             d:DataContext="{d:DesignData Type=viewmodels:SpecContactViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="Search ccontact"/>
+    
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{Binding PageTitle}" FontSize="22" FontWeight="Medium" Margin="0 0 0 30" />
+
+        <ListView Grid.Row="1" ItemsSource="{Binding Contacts}">
+            <ListView.ItemTemplate>
+                <DataTemplate DataType="models:ContactsModel">
+                    <StackPanel>
+                        <TextBlock Text="{Binding FirstName}" FontWeight="Bold" />
+                        <TextBlock Text="{Binding LastName}" FontWeight="Bold" />
+                        <TextBlock Text="{Binding Email}" />
+                        <TextBlock Text="{Binding Phonenumber}" />
+                        <TextBlock Text="{Binding Address}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Command="" Content="EDIT CONTACT" Margin="10 0 10 0" />
+            <Button Grid.Column="1" Command="{Binding}" Content="DELETE CONTACT" Margin="10 0 10 0" />
+        </Grid>
     </Grid>
 </UserControl>
