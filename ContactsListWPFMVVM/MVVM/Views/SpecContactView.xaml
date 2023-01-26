@@ -13,52 +13,42 @@
     <Grid Margin="30">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="{Binding PageTitle}" FontSize="22" FontWeight="Medium" Margin="0 0 0 30" />
 
-        <ListView Grid.Row="1" ItemsSource="{Binding Contacts}">
-            <ListView.ItemTemplate>
-                <DataTemplate DataType="models:ContactsModel">
-                    <StackPanel>
-                        <TextBlock Text="{Binding FirstName}" FontWeight="Bold" />
-                        <TextBlock Text="{Binding LastName}" FontWeight="Bold" />
-                        <TextBlock Text="{Binding Email}" />
-                        <TextBlock Text="{Binding Phonenumber}" />
-                        <TextBlock Text="{Binding Address}" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-        <StackPanel Grid.Row="1">
-            <TextBlock Text="Firstname" />
-            <TextBox Text="{Binding Firstname}" Padding="5" Margin="0 2 0 5" />
-
-            <TextBlock Text="Enter lastname:" />
-            <TextBox Text="{Binding Lastname}" Padding="5" Margin="0 2 0 5" />
-
-            <TextBlock Text="Enter phonenumber:" />
-            <TextBox Text="{Binding Phonenumber}" Padding="5" Margin="0 2 0 5" />
-
-            <TextBlock Text="Enter address:" />
-            <TextBox Text="{Binding Address}" Padding="5" Margin="0 2 0 5" />
-
-            <TextBlock Text="Enter email:" />
-            <TextBox Text="{Binding Email}" Padding="5" Margin="0 2 0 10" />
-
-            <Button Command="{Binding AddContactCommand}" Content="ADD CONTACT" Padding="10" />
-        </StackPanel>
-
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions >
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Command="" Content="EDIT CONTACT" Margin="10 0 10 0" />
-            <Button Grid.Column="1" Command="{Binding}" Content="DELETE CONTACT" Margin="10 0 10 0" />
+
+            <ListView BorderThickness="0" ItemsSource="{Binding Contacts}" HorizontalAlignment="Stretch">
+                <ListView.ItemTemplate>
+                    <DataTemplate DataType="{x:Type models:ContactsModel}">
+                        <Grid Margin="0 2 0 2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" HorizontalAlignment="Left">
+                                <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" />
+                                <TextBlock Text="{Binding Email}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button x:Name="btn_edit" Click="btn_edit_Click" Content="EDIT" Margin="10 6 0 6" Width="50" FontSize="10"/>
+                                <Button x:Name="btn_remove" Click="btn_remove_Click" Content="DELETE" Margin="10 6 0 6" Width="50" FontSize="10"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+                <!--<Button Grid.Column="1" Command="" Content="EDIT CONTACT" Margin="10 0 10 10" />
+                <Button Grid.Column="2" Command="{Binding}" Content="DELETE CONTACT" Margin="10 0 10 0" />-->
         </Grid>
+        
     </Grid>
 </UserControl>

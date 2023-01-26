@@ -13,26 +13,10 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
 {
     public partial class SpecContactViewModel : ObservableObject
     {
-        private readonly FileService fileservie;
-
-        public SpecContactViewModel()
-        {
-            fileservie = new FileService();
-            contacts = fileservie.Contacts();
-        }
-
         [ObservableProperty]
         private string pageTitle = "Edit Contact";
 
         [ObservableProperty]
-        private ObservableCollection<ContactsModel> contacts;
-
-
-        [RelayCommand]
-        public void RemoveContact(ContactsModel contact)
-        {
-            fileservie.RemoveContact(contact);
-        }
-
+        private ObservableCollection<ContactsModel> contacts = FileService.GetContacts();
     }
 }

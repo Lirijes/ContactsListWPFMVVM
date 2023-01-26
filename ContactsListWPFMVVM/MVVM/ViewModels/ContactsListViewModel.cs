@@ -12,18 +12,10 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
 {
     public partial class ContactsListViewModel : ObservableObject
     {
-        private readonly FileService fileservie;
-        public ContactsListViewModel()
-        {
-            fileservie = new FileService();
-            contacts = fileservie.Contacts();
-        }
-
         [ObservableProperty]
         private string pageTitle = "Contacts";
 
         [ObservableProperty]
-        private ObservableCollection<ContactsModel> contacts;
-
+        private ObservableCollection<ContactsModel> contacts = FileService.GetContacts();
     }
 }

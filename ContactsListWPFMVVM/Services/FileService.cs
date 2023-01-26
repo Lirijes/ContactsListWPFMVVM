@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using ContactsListWPFMVVM.MVVM.Models;
 using Newtonsoft.Json;
 using System;
@@ -11,19 +12,18 @@ using System.Threading.Tasks;
 
 namespace ContactsListWPFMVVM.Services
 {
-    public partial class FileService : ObservableObject
+    public static class FileService 
     {
-        public string FilePath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\ContactsWPFMVVM.json";
+        public static string FilePath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\ContactsWPFMVVM.json";
 
-        [ObservableProperty]
-        private ObservableCollection<ContactsModel> contacts = new ObservableCollection<ContactsModel>();
+        static ObservableCollection<ContactsModel> contacts = new ObservableCollection<ContactsModel>();
 
-        public FileService()
+        static FileService()
         {
             Read();
         }
 
-        public void Read()
+        public static void Read()
         {
             try
             {
@@ -36,28 +36,28 @@ namespace ContactsListWPFMVVM.Services
             }
         }
 
-        public void SaveContact()
+        public static void SaveContact()
         {
             using var sw = new StreamWriter(FilePath);
             sw.WriteLine(JsonConvert.SerializeObject(contacts));
         }
 
-        public void AddContact(ContactsModel contact)
+        public static void AddContact(ContactsModel contact)
         {
             contacts.Add(contact);
             SaveContact();
         }
 
-        public void RemoveContact(ContactsModel contact)
+        public static void RemoveContact(ContactsModel contact)
         {
             contacts.Remove(contact);
             SaveContact();
         }
 
-        public ObservableCollection<ContactsModel> Contacts()
+        public static ObservableCollection<ContactsModel> GetContacts()
         {
             var contactItems = new ObservableCollection<ContactsModel>();
-            foreach (ContactsModel contact in contacts) 
+            foreach (ContactsModel contact in contacts)
                 contactItems.Add(contact);
             return contactItems;
         }

@@ -13,33 +13,21 @@
     <Grid Margin="30" >
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="{Binding PageTitle}" FontSize="22" FontWeight="Medium" Margin="0 0 0 30" />
 
-        <ListView Grid.Row="1" ItemsSource="{Binding Contacts}">
+        <ListView BorderThickness="0" Grid.Row="1" ItemsSource="{Binding Contacts}">
             <ListView.ItemTemplate>
-                <DataTemplate DataType="models:ContactsModel">
-                    <StackPanel>
-                        <TextBlock Text="{Binding FirstName}" FontWeight="Bold" />
-                        <TextBlock Text="{Binding LastName}" FontWeight="Bold" />
+                <DataTemplate DataType="{x:Type models:ContactsModel}">
+                    <StackPanel Margin="2">
+                        <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" />
+                        <!--<TextBlock Text="{Binding LastName}" FontWeight="Bold" />-->
                         <TextBlock Text="{Binding Email}" />
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions >
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Command="{Binding}" Margin="10 0 10 0" Content="GO BACK" Click="Button_Click" />
-            <Button Grid.Column="1" Command="" Content="EDIT CONTACT" Margin="10 0 10 0" />
-            <Button Grid.Column="2" Command="{Binding}" Content="DELETE CONTACT" Margin="10 0 10 0" />
-        </Grid>
     </Grid>
 </UserControl>
