@@ -1,4 +1,5 @@
-﻿using ContactsListWPFMVVM.MVVM.Models;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using ContactsListWPFMVVM.MVVM.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,11 @@ using System.Threading.Tasks;
 
 namespace ContactsListWPFMVVM.Services
 {
-    public class FileService
+    public partial class FileService : ObservableObject
     {
         public string FilePath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\ContactsWPFMVVM.json";
 
+        [ObservableProperty]
         private List<ContactsModel> contacts = new List<ContactsModel>();
 
         public FileService()

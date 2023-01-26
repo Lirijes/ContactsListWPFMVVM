@@ -33,6 +33,25 @@
             </ListView.ItemTemplate>
         </ListView>
 
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Firstname" />
+            <TextBox Text="{Binding Firstname}" Padding="5" Margin="0 2 0 5" />
+
+            <TextBlock Text="Enter lastname:" />
+            <TextBox Text="{Binding Lastname}" Padding="5" Margin="0 2 0 5" />
+
+            <TextBlock Text="Enter phonenumber:" />
+            <TextBox Text="{Binding Phonenumber}" Padding="5" Margin="0 2 0 5" />
+
+            <TextBlock Text="Enter address:" />
+            <TextBox Text="{Binding Address}" Padding="5" Margin="0 2 0 5" />
+
+            <TextBlock Text="Enter email:" />
+            <TextBox Text="{Binding Email}" Padding="5" Margin="0 2 0 10" />
+
+            <Button Command="{Binding AddContactCommand}" Content="ADD CONTACT" Padding="10" />
+        </StackPanel>
+
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="*" />

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsListWPFMVVM", "ContactsListWPFMVVM\ContactsListWPFMVVM.csproj", "{322B70E2-208D-4F5F-8F98-EF9BAD280A76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactsListWPFMVVM", "ContactsListWPFMVVM\ContactsListWPFMVVM.csproj", "{322B70E2-208D-4F5F-8F98-EF9BAD280A76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsListWPFMVVM.Test_xUnit", "ContactsListWPFMVVM.Test_xUnit\ContactsListWPFMVVM.Test_xUnit.csproj", "{DE583252-18DE-4F58-ACE7-81BC1F777246}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{322B70E2-208D-4F5F-8F98-EF9BAD280A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{322B70E2-208D-4F5F-8F98-EF9BAD280A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{322B70E2-208D-4F5F-8F98-EF9BAD280A76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE583252-18DE-4F58-ACE7-81BC1F777246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE583252-18DE-4F58-ACE7-81BC1F777246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE583252-18DE-4F58-ACE7-81BC1F777246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE583252-18DE-4F58-ACE7-81BC1F777246}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
