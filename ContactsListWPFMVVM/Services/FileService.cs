@@ -16,7 +16,7 @@ namespace ContactsListWPFMVVM.Services
         public string FilePath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\ContactsWPFMVVM.json";
 
         [ObservableProperty]
-        private List<ContactsModel> contacts = new List<ContactsModel>();
+        private ObservableCollection<ContactsModel> contacts = new ObservableCollection<ContactsModel>();
 
         public FileService()
         {
@@ -28,11 +28,11 @@ namespace ContactsListWPFMVVM.Services
             try
             {
                 using var sr = new StreamReader(FilePath);
-                contacts = JsonConvert.DeserializeObject<List<ContactsModel>>(sr.ReadToEnd())!;
+                contacts = JsonConvert.DeserializeObject<ObservableCollection<ContactsModel>>(sr.ReadToEnd())!;
             }
             catch 
             {
-                contacts = new List<ContactsModel>();
+                contacts = new ObservableCollection<ContactsModel>();
             }
         }
 
