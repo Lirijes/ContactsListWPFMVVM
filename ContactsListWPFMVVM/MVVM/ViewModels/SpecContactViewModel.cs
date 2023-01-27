@@ -17,6 +17,6 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
         private string pageTitle = "Edit Contact";
 
         [ObservableProperty]
-        private ObservableCollection<ContactsModel> contacts = FileService.GetContacts();
+        private ObservableCollection<ContactsModel> contacts = FileService.Contacts();
     }
 }

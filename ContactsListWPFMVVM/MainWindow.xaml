@@ -15,7 +15,6 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0">
@@ -44,13 +43,13 @@
             </ContentControl.Resources>
         </ContentControl>
 
-        <ContentControl Grid.Column="2" Content="{Binding ContactListViewModel}">
+        <!--<ContentControl Grid.Column="2" Content="{Binding ContactListViewModel}">
             <ContentControl.Resources>
                 <DataTemplate DataType="{x:Type viewmodels:ContactsListViewModel}">
                     <views:ContactsView />
                 </DataTemplate>
             </ContentControl.Resources>
-        </ContentControl>
+        </ContentControl>-->
 
     </Grid>
 </Window>

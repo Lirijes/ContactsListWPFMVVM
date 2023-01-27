@@ -16,6 +16,6 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
         private string pageTitle = "Contacts";
 
         [ObservableProperty]
-        private ObservableCollection<ContactsModel> contacts = FileService.GetContacts();
+        private ObservableCollection<ContactsModel> contacts = FileService.Contacts();
     }
 }

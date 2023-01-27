@@ -21,9 +21,10 @@
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <ListView BorderThickness="0" ItemsSource="{Binding Contacts}" HorizontalAlignment="Stretch">
+            <ListView BorderThickness="0" ItemsSource="{Binding Contacts}"  HorizontalAlignment="Stretch">
                 <ListView.ItemTemplate>
                     <DataTemplate DataType="{x:Type models:ContactsModel}">
                         <Grid Margin="0 2 0 2">
@@ -45,9 +46,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
-                <!--<Button Grid.Column="1" Command="" Content="EDIT CONTACT" Margin="10 0 10 10" />
-                <Button Grid.Column="2" Command="{Binding}" Content="DELETE CONTACT" Margin="10 0 10 0" />-->
         </Grid>
         
     </Grid>

@@ -22,8 +22,10 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
         [ObservableProperty]
         private string firstname = string.Empty;
 
+        [ObservableProperty]
         private string lastname = string.Empty;
 
+        [ObservableProperty]
         private int phonenumber = 0;
 
         [ObservableProperty]
@@ -35,10 +37,10 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
         [RelayCommand]
         public void AddContact()
         {
-            FileService.AddContact(new ContactsModel { FirstName = Firstname, LastName = lastname, Phonenumber = phonenumber, Address = Address, Email = Email });
+            FileService.AddContact(new ContactsModel { FirstName = Firstname, LastName = Lastname, Phonenumber = Phonenumber, Address = Address, Email = Email });
             Firstname = string.Empty;
-            lastname = string.Empty;
-            phonenumber = 0;
+            Lastname = string.Empty;
+            Phonenumber = 0;
             Address = string.Empty;
             Email = string.Empty;
         }

@@ -16,7 +16,7 @@ namespace ContactsListWPFMVVM.Services
     {
         public static string FilePath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\ContactsWPFMVVM.json";
 
-        static ObservableCollection<ContactsModel> contacts = new ObservableCollection<ContactsModel>();
+        public static ObservableCollection<ContactsModel> contacts = new ObservableCollection<ContactsModel>();
 
         static FileService()
         {
@@ -54,12 +54,13 @@ namespace ContactsListWPFMVVM.Services
             SaveContact();
         }
 
-        public static ObservableCollection<ContactsModel> GetContacts()
+        public static ObservableCollection<ContactsModel> Contacts()
         {
-            var contactItems = new ObservableCollection<ContactsModel>();
-            foreach (ContactsModel contact in contacts)
-                contactItems.Add(contact);
-            return contactItems;
+            //var contactItems = new ObservableCollection<ContactsModel>();
+            //foreach (ContactsModel contact in contacts)
+            //contactItems.Add(contact);
+            //return contactItems;
+            return contacts;
         }
     }
 }
