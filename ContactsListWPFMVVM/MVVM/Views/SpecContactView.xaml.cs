@@ -19,9 +19,8 @@ namespace ContactsListWPFMVVM.MVVM.Views
 
         private void btn_edit_Click(object sender, RoutedEventArgs e)
         {
-            var button = (Button)sender;
-            var contact = (ContactsModel)button.DataContext; 
-
+            //var button = (Button)sender;
+            //var contact = (ContactsModel)button.DataContext;
 
         }
 
