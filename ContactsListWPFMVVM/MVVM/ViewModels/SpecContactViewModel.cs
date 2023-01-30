@@ -18,5 +18,20 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
 
         [ObservableProperty]
         private ObservableCollection<ContactsModel> contacts = FileService.Contacts();
+
+        [ObservableProperty]
+        private ContactsModel selectedContact = null!;
+
+        [RelayCommand]
+        public void Remove()
+        {
+            FileService.RemoveContact(SelectedContact);
+        }
+
+        [RelayCommand]
+        public void Edit()
+        {
+            //FileService.SaveContact(SelectedContact);
+        }
     }
 }

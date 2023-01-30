@@ -54,6 +54,11 @@ namespace ContactsListWPFMVVM.Services
             SaveContact();
         }
 
+        public static void EditContact(ContactsModel contact)
+        {
+            
+        }
+
         public static ObservableCollection<ContactsModel> Contacts()
         {
             //var contactItems = new ObservableCollection<ContactsModel>();

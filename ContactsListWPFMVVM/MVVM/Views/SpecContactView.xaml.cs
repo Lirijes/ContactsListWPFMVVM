@@ -21,6 +21,8 @@ namespace ContactsListWPFMVVM.MVVM.Views
         {
             var button = (Button)sender;
             var contact = (ContactsModel)button.DataContext; 
+
+
         }
 
         private void btn_remove_Click(object sender, RoutedEventArgs e)
