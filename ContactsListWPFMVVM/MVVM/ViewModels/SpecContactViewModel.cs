@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ContactsListWPFMVVM.MVVM.ViewModels
 {
@@ -20,18 +21,24 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
         private ObservableCollection<ContactsModel> contacts = FileService.Contacts();
 
         [ObservableProperty]
-        private ContactsModel selectedContact = null!;
-
-        [RelayCommand]
-        public void Remove()
-        {
-            FileService.RemoveContact(SelectedContact);
-        }
+        public ContactsModel selectedContact = null!;
 
         [RelayCommand]
         public void Edit()
         {
-            //FileService.SaveContact(SelectedContact);
+            MessageBox.Show($"Contact {SelectedContact.DisplayName} is updated");
+            Update(SelectedContact.ID, SelectedContact);
+        }
+        private void Update(Guid id, ContactsModel contact)
+        {
+            FileService.EditContact(id, contact);
+        }
+
+        [RelayCommand]
+        public void Remove()
+        {
+            MessageBox.Show($"Are you sure that you want to remove: {SelectedContact.DisplayName}");
+            FileService.RemoveContact(SelectedContact);
         }
     }
 }

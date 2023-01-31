@@ -39,7 +39,6 @@
                             </StackPanel>
 
                             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                                <Button x:Name="btn_edit" Click="btn_edit_Click" Content="EDIT" Margin="10 6 0 6" Width="50" FontSize="10"/>
                                 <Button x:Name="btn_remove" Click="btn_remove_Click" Content="DELETE" Margin="10 6 0 6" Width="50" FontSize="10"/>
                             </StackPanel>
                         </Grid>
@@ -49,10 +48,10 @@
 
             <StackPanel Grid.Column="1" Margin="10">
                 <TextBlock Text="Firstname" />
-                <TextBox Text="{Binding SelectedContact.Firstname}" Padding="5" Margin="0 2 0 5" />
+                <TextBox Text="{Binding SelectedContact.FirstName}" Padding="5" Margin="0 2 0 5" />
 
                 <TextBlock Text="Lastname:" />
-                <TextBox Text="{Binding SelectedContact.Lastname}" Padding="5" Margin="0 2 0 5" />
+                <TextBox Text="{Binding SelectedContact.LastName}" Padding="5" Margin="0 2 0 5" />
 
                 <TextBlock Text="Phonenumber:" />
                 <TextBox Text="{Binding SelectedContact.Phonenumber}" Padding="5" Margin="0 2 0 5" />
@@ -63,10 +62,10 @@
                 <TextBlock Text="Email:" />
                 <TextBox Text="{Binding SelectedContact.Email}" Padding="5" Margin="0 2 0 10" />
 
-                <Button Command="{Binding Remove}" Content="REMOVE" Width="60" FontSize="10" />
-                <Button Command="{Binding Edit}" Content="EDIT" Width="60" FontSize="10"/>
+                <Button Command="{Binding RemoveCommand}" Content="REMOVE" Width="60" FontSize="10" />
+                <Button Command="{Binding EditCommand}" Content="EDIT" Width="60" FontSize="10"/>
             </StackPanel>
         </Grid>
-        
+
     </Grid>
 </UserControl>

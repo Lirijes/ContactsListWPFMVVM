@@ -1,4 +1,5 @@
-﻿using ContactsListWPFMVVM.MVVM.Models;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using ContactsListWPFMVVM.MVVM.Models;
 using ContactsListWPFMVVM.Services;
 using System;
 using System.Collections.Generic;

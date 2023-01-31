@@ -54,9 +54,13 @@ namespace ContactsListWPFMVVM.Services
             SaveContact();
         }
 
-        public static void EditContact(ContactsModel contact)
+        public static void EditContact(Guid id, ContactsModel contact) //cred till christian som visade mig hur han gjorde edit delen
         {
-            
+            var item = contacts.FirstOrDefault(x => x.ID == id);
+            var index = contacts.IndexOf(item);
+            contacts.RemoveAt(index);
+            contacts.Insert(index, contact);
+            SaveContact();
         }
 
         public static ObservableCollection<ContactsModel> Contacts()
