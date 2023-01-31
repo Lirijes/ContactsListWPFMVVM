@@ -25,11 +25,5 @@ namespace ContactsListWPFMVVM.MVVM.Views
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var mainwindow = (MainWindow)Application.Current.MainWindow;
-            //mainwindow.GoToStartup(new StartupViewModel());
-        }
     }
 }

@@ -31,16 +31,28 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
                             </Grid.ColumnDefinitions>
 
-                            <StackPanel Grid.Column="0" HorizontalAlignment="Left">
+                            <StackPanel Grid.Column="1" HorizontalAlignment="Left">
                                 <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" />
                                 <TextBlock Text="{Binding Email}" />
                             </StackPanel>
 
-                            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
                                 <Button x:Name="btn_remove" Click="btn_remove_Click" Content="DELETE" Margin="10 6 0 6" Width="50" FontSize="10"/>
                             </StackPanel>
+                            
+                            <Expander Grid.Column="0">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding FirstName}" FontWeight="Bold" />
+                                    <TextBlock Text="{Binding LastName}" FontWeight="Bold" />
+                                    <TextBlock Text="{Binding Phonenumber}" />
+                                    <TextBlock Text="{Binding Address}" />
+                                    <TextBlock Text="{Binding Email}" />
+                                </StackPanel>
+                            </Expander>
+
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>

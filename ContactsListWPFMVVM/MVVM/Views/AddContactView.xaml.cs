@@ -25,5 +25,10 @@ namespace ContactsListWPFMVVM.MVVM.Views
             InitializeComponent();
             
         }
+
+        private void btn_edit_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new MainWindow();
+        }
     }
 }

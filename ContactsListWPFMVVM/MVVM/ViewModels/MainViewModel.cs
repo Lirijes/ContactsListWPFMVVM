@@ -24,13 +24,13 @@ namespace ContactsListWPFMVVM.MVVM.ViewModels
         }
 
         [RelayCommand]
-        private void GoToAddContact()
+        public void GoToAddContact()
         {
             CurrentViewModel = new AddContactViewModel();
         }
 
         [RelayCommand]
-        private void GoToContacts()
+        public void GoToContacts()
         {
             CurrentViewModel = new ContactsListViewModel();
         }

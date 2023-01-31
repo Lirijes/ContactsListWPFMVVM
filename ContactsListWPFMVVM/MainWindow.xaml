@@ -9,7 +9,7 @@
         d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="650" Width="800">
+        Title="MainWindow" Height="550" Width="800">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -17,10 +17,10 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0">
-            <Button Command="{Binding GoToAddContactCommand}" Content="&#xf044;" Style="{StaticResource navButton}" />
-            <Button Command="{Binding GoToSpecContactCommand}" Content="&#xf304;" Style="{StaticResource navButton}" />
-            <Button Command="{Binding GoToContactsCommand}" Content="&#xf022;" Style="{StaticResource navButton}" />
+        <StackPanel Grid.Column="0" Background="LightSlateGray">
+            <Button Command="{Binding GoToAddContactCommand}" Content="&#xf0fe;" Style="{StaticResource navButton}" BorderThickness="0" />
+            <Button Command="{Binding GoToSpecContactCommand}" Content="&#xf044;" Style="{StaticResource navButton}" BorderThickness="0" />
+            <Button Command="{Binding GoToContactsCommand}" Content="&#xf2b9;" Style="{StaticResource navButton}" BorderThickness="0" />
         </StackPanel>
 
         <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}">
@@ -42,14 +42,6 @@
                 </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>
-
-        <!--<ContentControl Grid.Column="2" Content="{Binding ContactListViewModel}">
-            <ContentControl.Resources>
-                <DataTemplate DataType="{x:Type viewmodels:ContactsListViewModel}">
-                    <views:ContactsView />
-                </DataTemplate>
-            </ContentControl.Resources>
-        </ContentControl>-->
 
     </Grid>
 </Window>

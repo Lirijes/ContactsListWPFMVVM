@@ -23,8 +23,15 @@
                 <DataTemplate DataType="{x:Type models:ContactsModel}">
                     <StackPanel Margin="2">
                         <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" />
-                        <!--<TextBlock Text="{Binding LastName}" FontWeight="Bold" />-->
-                        <TextBlock Text="{Binding Email}" />
+                        <Expander>
+                            <StackPanel>
+                                <TextBlock Text="{Binding FirstName}" />
+                                <TextBlock Text="{Binding LastName}" />
+                                <TextBlock Text="{Binding Phonenumber}" />
+                                <TextBlock Text="{Binding Address}" />
+                                <TextBlock Text="{Binding Email}" />
+                            </StackPanel>
+                        </Expander>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
